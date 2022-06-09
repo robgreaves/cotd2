@@ -41,7 +41,10 @@ function get_client_ip() {
     return $ipaddress;
 }
 
-parse_str($_SERVER['QUERY_STRING']);
+parse_str($_SERVER['QUERY_STRING'], $qs);
+$nextpage = $qs['nextpage'];
+$rating = $qs['rating'];
+$favorite = $qs['favorite'];
 
 if ( isset($nextpage) ) { 
 	$item = $nextpage;
